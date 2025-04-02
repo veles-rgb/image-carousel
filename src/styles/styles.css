@@ -1,1 +1,32 @@
 /* styles.css */
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.left-arrow,
+.right-arrow {
+    padding: 1rem;
+}
+
+.image-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.image-slide>img {
+    display: none;
+    border: 2px solid black;
+    border-radius: 1rem;
+}
