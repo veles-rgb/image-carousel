@@ -50,6 +50,7 @@ function createCircles() {
     const circleContainer = document.createElement("div");
     circleContainer.classList.add("circle-container");
     imageSlide.appendChild(circleContainer);
+    // eslint-disable-next-line no-unused-vars
     images.forEach(image => {
         const newCircle = document.createElement("div");
         newCircle.classList.add("circle");
