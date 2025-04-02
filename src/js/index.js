@@ -10,13 +10,6 @@ let currentIndex = 0;
 
 images[0].style.display = "block";
 
-function createCircles() {
-    images.forEach(image => {
-        const newCircle = document.createElement("div");
-        newCircle.classList.add;
-    });
-}
-
 leftArrow.addEventListener("click", () => {
     if (currentIndex === 0) {
         currentIndex = images.length - 1;
@@ -26,6 +19,7 @@ leftArrow.addEventListener("click", () => {
         showImage(currentIndex);
     }
     hideImages();
+    renderCircles();
 });
 
 rightArrow.addEventListener("click", () => {
@@ -37,6 +31,7 @@ rightArrow.addEventListener("click", () => {
         showImage(currentIndex);
     }
     hideImages();
+    renderCircles();
 });
 
 function showImage(index) {
@@ -51,3 +46,41 @@ function hideImages() {
     });
 }
 
+function createCircles() {
+    const circleContainer = document.createElement("div");
+    circleContainer.classList.add("circle-container");
+    imageSlide.appendChild(circleContainer);
+    images.forEach(image => {
+        const newCircle = document.createElement("div");
+        newCircle.classList.add("circle");
+        circleContainer.appendChild(newCircle);
+    });
+}
+
+createCircles();
+
+function renderCircles() {
+    const circleContainer = document.querySelector(".circle-container");
+    const circles = circleContainer.querySelectorAll(".circle");
+
+    circles.forEach((circle, index) => {
+        if (currentIndex === index) {
+            circle.style.backgroundColor = "black";
+        }
+        if (currentIndex !== index) {
+            circle.style.backgroundColor = "white";
+        }
+
+        circle.addEventListener("click", () => {
+            currentIndex = index;
+            showImage(index);
+            hideImages();
+            circles.forEach(circle => {
+                circle.style.backgroundColor = "white";
+            });
+            circle.style.backgroundColor = "black";
+        });
+    });
+}
+
+renderCircles();
