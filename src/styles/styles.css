@@ -13,9 +13,24 @@ body {
     height: 100vh;
 }
 
+.carousel-container>nav>img {
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
 .left-arrow,
 .right-arrow {
     padding: 1rem;
+}
+
+.left-arrow:hover,
+.right-arrow:hover {
+    cursor: pointer;
+    filter: brightness(0) saturate(100%) invert(57%) sepia(0%) saturate(1%) hue-rotate(218deg) brightness(93%) contrast(89%);
 }
 
 .image-slide {
@@ -26,10 +41,29 @@ body {
     height: 100vh;
 }
 
+@keyframes myAnim {
+    0% {
+        opacity: 0.2;
+        transform: scale(0.6);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 .image-slide>img {
     display: none;
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
     border: 2px solid black;
     border-radius: 1rem;
+    animation: myAnim 1s ease 0s 1 normal forwards;
 }
 
 .circle-container {
@@ -47,4 +81,5 @@ body {
 
 .circle:hover {
     cursor: pointer;
+    border-color: #878787;
 }
