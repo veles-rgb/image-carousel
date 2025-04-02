@@ -13,7 +13,7 @@ images[0].style.display = "block";
 function createCircles() {
     images.forEach(image => {
         const newCircle = document.createElement("div");
-
+        newCircle.classList.add;
     });
 }
 
